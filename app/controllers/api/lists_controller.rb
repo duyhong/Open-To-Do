@@ -2,7 +2,7 @@ class Api::ListsController < ApiController
    before_action :authenticated?
 
    def create
-     @user = User.find(params[:user_id])  # current_user
+     # @user = User.find(params[:user_id])  # current_user
      list = List.new(list_params)
      if list.save
        render json: list
