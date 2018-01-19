@@ -9,6 +9,7 @@ class Api::UsersController < ApiController
 
    def create
      user = User.new(user_params)
+     # user.password = Bcrypt::Password.create(user_params["password"])
      if user.save
        render json: user
      else

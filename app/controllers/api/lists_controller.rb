@@ -2,9 +2,19 @@ class Api::ListsController < ApiController
    before_action :authenticated?
 
    def create
-     # @user = User.find(params[:user_id])  # current_user
+     @user = User.find(params[:user_id])  # current_user
      list = List.new(list_params)
+     list.user = @user
      if list.save
+       render json: list
+     else
+       render json: { errors: list.errors.full_messages }, status: :unprocessable_entity
+     end
+   end
+
+   def update
+     list = List.find(params[:id])
+     if list.update(list_params)
        render json: list
      else
        render json: { errors: list.errors.full_messages }, status: :unprocessable_entity
