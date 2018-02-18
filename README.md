@@ -95,36 +95,36 @@ For now, go to [c9.io](https://c9.io/) and sign up for a free account to use Clo
 
   * Create `User`, `List`, `Item` from the command line:
 
-  ```
-  $ curl -u username:password -d "user[username]=Sterling" -d "user[password]=Archer" http://localhost:3000/api/users/
-  ```
-  ```
-  $ curl -u username:password -d "list[name]=Things to do today" -d "list[permissions]=private" http://localhost:3000/api/users/1/lists
-  ```
-  ```
-  $ curl -u username:password -d "item[description]=Dance if you want to" http://localhost:3000/api/lists/1/items
-  ```
+    ```
+    $ curl -u username:password -d "user[username]=Sterling" -d "user[password]=Archer" http://localhost:3000/api/users/
+    ```
+    ```
+    $ curl -u username:password -d "list[name]=Things to do today" -d "list[permissions]=private" http://localhost:3000/api/users/1/lists
+    ```
+    ```
+    $ curl -u username:password -d "item[description]=Dance if you want to" http://localhost:3000/api/lists/1/items
+    ```
 
   * Delete `User` with `user_id = 1` from the command line:
 
-  ```
-  $ curl -u username:password -X DELETE http://localhost:3000/api/users/1/
-  ```
+    ```
+    $ curl -u username:password -X DELETE http://localhost:3000/api/users/1/
+    ```
 
   * Delete `List` with `list_id = 1` which belongs to `User` with `user_id = 2` from the command line:
 
-  ```
-  $ curl -u username:password -X DELETE http://localhost:3000/api/users/2/lists/1
-  ```
+    ```
+    $ curl -u username:password -X DELETE http://localhost:3000/api/users/2/lists/1
+    ```
 
   * Update list permission from `private = false` to `private = true` in command line:
 
-  ```
-  $ curl -X PUT -u username:password -d "list[private]=true" http://localhost:3000/api/lists/1
-  ```
+    ```
+    $ curl -X PUT -u username:password -d "list[private]=true" http://localhost:3000/api/lists/1
+    ```
 
   * Update item permission from `completed = false` to `completed = true` in command line:
 
-  ```
-  $ curl -X PUT -u username:password -d "item[completed]=true" http://localhost:3000/api/items/1
-  ```
+    ```
+    $ curl -X PUT -u username:password -d "item[completed]=true" http://localhost:3000/api/items/1
+    ```
