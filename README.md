@@ -85,6 +85,14 @@ For now, go to [c9.io](https://c9.io/) and sign up for a free account to use Clo
 
 ## Usage
 
+  Start the Rails server from your command line:
+  ```
+  $ rails s
+  ```
+  The server will start up. To stop the server, press `ctrl + c`.
+
+  Once the rails server started:
+
   * Create users via the Rails console.
 
   ![](../master/screenshots/create_user.png)
